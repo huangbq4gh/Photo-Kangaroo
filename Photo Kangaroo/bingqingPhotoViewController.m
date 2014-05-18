@@ -24,7 +24,7 @@
 - (instancetype)init{
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.itemSize = CGSizeMake(159.0, 159.0);
+    layout.itemSize = CGSizeMake(106.0, 106.0);
     layout.minimumInteritemSpacing = 1.0;
     layout.minimumLineSpacing = 1.0;
     
@@ -38,7 +38,7 @@
     
     self.title = @"Photo Kangaroo";
     [self.collectionView registerClass:[bingqingPhotoCell class] forCellWithReuseIdentifier:@"photo"];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:228.0/255.0 blue:226.0/255.0 alpha:0.8];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.accessToken = [userDefaults objectForKey:@"accessToken"];
