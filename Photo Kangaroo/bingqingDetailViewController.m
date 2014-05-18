@@ -7,26 +7,38 @@
 //
 
 #import "bingqingDetailViewController.h"
+#import "bingqingPhotoController.h"
 
 @interface bingqingDetailViewController ()
-
+@property (nonatomic) UIImageView *imageView;
 @end
 
 @implementation bingqingDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    self.imageView = [[UIImageView alloc]init];
+    [self.view addSubview:self.imageView];
+    
+    [bingqingPhotoController imageForPhoto:self.photo size:@"standard_resolution" completion:^(UIImage *image) {
+        self.imageView.image = image;
+    }];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(close)];
+    [self.view addGestureRecognizer:tap];
+    
+}
+
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    CGSize size = self.view.bounds.size;
+    CGSize imageSize = CGSizeMake(size.width, size.width);
+    
+    self.imageView.frame = CGRectMake(0.0, (size.height - imageSize.height)/2.0, imageSize.width,imageSize.height);
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,6 +46,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+-(void)close{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
 
 /*
 #pragma mark - Navigation

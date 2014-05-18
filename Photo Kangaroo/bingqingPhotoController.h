@@ -10,4 +10,6 @@
 
 @interface bingqingPhotoController : NSObject
 
++(void)imageForPhoto:(NSDictionary *)photo size:(NSString *)size completion: (void(^)(UIImage *image))completion;
+
 @end

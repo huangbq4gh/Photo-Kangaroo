@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface bingqingDismissDetailTransition : NSObject
+@interface bingqingDismissDetailTransition : NSObject <UIViewControllerAnimatedTransitioning>
 
 @end

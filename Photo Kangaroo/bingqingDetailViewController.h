@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface bingqingDetailViewController : UIViewController
-
+@property (nonatomic) NSDictionary *photo;
 @end

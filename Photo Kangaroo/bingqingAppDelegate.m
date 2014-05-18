@@ -7,12 +7,36 @@
 //
 
 #import "bingqingAppDelegate.h"
+#import "bingqingPhotoViewController.h"
+#import <SimpleAuth/SimpleAuth.h>
 
 @implementation bingqingAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    SimpleAuth.configuration[@"instagram"] = @{
+                                               @"client_id" : @"d12818fbbb2e4e8fb1cd5674e6dc7904",
+                                               SimpleAuthRedirectURIKey : @"photokangaroo://auth/instagram"
+                                               };
+    
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+   
+    //add navi
+    bingqingPhotoViewController *photoViewController = [[bingqingPhotoViewController alloc]init];
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:photoViewController];
+    UINavigationBar * navigationBar = navigationController.navigationBar;
+    navigationBar.barTintColor = [UIColor colorWithRed:242.0/255.0 green:122.0/255.0 blue:87.0/255.0 alpha:1.0];
+    navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
+    
+    
+    //assign root
+    self.window.rootViewController = navigationController;
+    
+    
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
