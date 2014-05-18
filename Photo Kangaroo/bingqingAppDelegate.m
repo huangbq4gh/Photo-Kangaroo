@@ -27,7 +27,7 @@
     bingqingPhotoViewController *photoViewController = [[bingqingPhotoViewController alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:photoViewController];
     UINavigationBar * navigationBar = navigationController.navigationBar;
-    navigationBar.barTintColor = [UIColor colorWithRed:242.0/255.0 green:122.0/255.0 blue:87.0/255.0 alpha:1.0];
+    navigationBar.barTintColor = [UIColor colorWithRed:242.0/255.0 green:122.0/255.0 blue:87.0/255.0 alpha:0.5];
     navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     

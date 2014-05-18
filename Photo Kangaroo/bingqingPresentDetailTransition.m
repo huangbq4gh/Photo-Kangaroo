@@ -17,8 +17,8 @@
     
     detail.view.alpha = 0.0;
     CGRect frame = containerView.bounds;
-    frame.origin.y += 20.0;
-    frame.size.height -=20.0;
+    //frame.origin.y += 20.0;
+    //frame.size.height -=20.0;
     detail.view.frame =frame;
     [containerView addSubview:detail.view];
     

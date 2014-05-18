@@ -24,7 +24,7 @@
 - (instancetype)init{
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.itemSize = CGSizeMake(106.0, 106.0);
+    layout.itemSize = CGSizeMake(159.0, 159.0);
     layout.minimumInteritemSpacing = 1.0;
     layout.minimumLineSpacing = 1.0;
     
